@@ -14,7 +14,15 @@
         import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js'
 
         const canvas = document.querySelector('#c2d')
-        const renderer = new THREE.WebGLRenderer({ canvas }) // 渲染器
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas }) // 渲染器
+
+        const _renderer = new THREE.WebGLRenderer()
+        _renderer.setSize(1100, 400)
+        document.body.appendChild(_renderer.domElement)
+
+        console.log('renderer', renderer.getContext(), _renderer.getContext())
+
+        renderer.setClearColor(0xeeeeee, .5)
 
         const fov = 40 // 视野范围
         const aspect = 2 // 相机默认值，画布宽高比
